@@ -4,7 +4,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if len(tuple_a) == 0:
         tupleA = (0, 0)
     elif len(tuple_a) == 1:
-        tupleA = tuple_a[0] + 0
+        tupleA = (tuple_a[0], 0)
     else:
         tupleA = (tuple_a[0], tuple_a[1])
 
