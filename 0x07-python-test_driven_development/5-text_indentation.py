@@ -20,11 +20,14 @@ def text_indentation(text):
     # Check if the text is string
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    res = text.strip(' ')
-    res = '.'.join(list(map(lambda x: x.strip(), res.split('.'))))
-    res = '?'.join(list(map(lambda x: x.strip(), res.split('?'))))
-    res = ':'.join(list(map(lambda x: x.strip(), res.split(':'))))
-    res = res.replace('.', '.@').replace('?', '?@')
-    res = res.replace(':', ':@').replace('@', '\n\n')
 
-    print(res)
+    txt = text[:]
+
+    for d in ".?:":
+        list_txt = txt.split(d)
+        txt = ""
+        for i in list_txt:
+            i = i.strip(" ")
+            txt = i + d if txt is "" else txt + "\n\n" + i + d
+
+    print(txt[:-3], end="")
