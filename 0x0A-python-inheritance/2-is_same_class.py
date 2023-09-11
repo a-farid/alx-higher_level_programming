@@ -4,7 +4,7 @@
 
 def is_same_class(obj, a_class):
     '''A function checks if an instance of the specified class
-    
+
     Args:
         obj (any): The object to check.
         a_class (type): The class to match the type of obj to.
