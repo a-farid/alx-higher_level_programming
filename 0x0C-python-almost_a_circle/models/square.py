@@ -1,7 +1,8 @@
+#!/usr/bin/python3
 '''MODULE CONTAININI THE SQUARE CLASS'''
 
-from rectangle import Rectangle
-from base import Base
+from models.rectangle import Rectangle
+from models.base import Base
 
 
 class Square(Rectangle):
