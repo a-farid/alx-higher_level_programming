@@ -7,10 +7,14 @@ import turtle
 class Base():
     '''The classe Base'''
     __nb_objects = 0
-    instances = []
 
     def __init__(self, id=None):
-        '''Constructor of the class Base'''
+        '''
+        Constructor of the class Base
+        
+        Args:
+            id: The id of the object
+        '''
         if id is not None:
             self.id = id
         else:
@@ -19,14 +23,24 @@ class Base():
         Base.instances.append(self.to_json_string)
 
     def to_json_string(list_dictionaries):
-        '''converts a list dictionnary of JSON string'''
+        '''
+        converts a list dictionnary of JSON string
+        
+        Args:
+            list_dictionaries: a list of dictionaries
+        '''
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        '''Save the list of JSON objects to a file'''
+        '''
+        Save the list of JSON objects to a file
+        
+        Args:
+            list_objs: List of JSON objects
+        '''
         json_file_name = cls.__name__ + '.json'
         with open(json_file_name, 'w') as jsonfile:
             if list_objs is None:
@@ -37,14 +51,25 @@ class Base():
     @staticmethod
     def from_json_string(json_string):
         '''A method that  that returns the list of
-        the JSON string representation json_string'''
+        the JSON string representation json_string
+        
+                
+        Args:
+            json_string: The JSON string to be converted
+        '''
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        '''A function that returns an instance with all attributes already set'''
+        '''
+        A function that returns an instance
+        with all attributes already set.
+        
+        Args:
+            dictionary: A dictionary containing all attributes
+        '''
         if dictionary and dictionary != {}:
             new_obj = cls(1, 1)
         else:
@@ -154,3 +179,5 @@ class Base():
             turt.hideturtle()
 
         turtle.exitonclick()
+
+

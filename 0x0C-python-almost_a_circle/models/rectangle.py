@@ -31,6 +31,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        '''Set / Get the width of the rectangle'''
         return self.__width
 
     @width.setter
@@ -43,6 +44,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        '''Set / Get the heigth of the rectangle'''
         return self.__height
 
     @height.setter
@@ -55,6 +57,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        '''Set / Get the x value of the rectangle'''
         return self.__x
 
     @x.setter
@@ -67,6 +70,8 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        '''Set / Get the y value of the rectangle'''
+
         return self.__y
 
     @y.setter
@@ -88,10 +93,24 @@ class Rectangle(Base):
             print(f'{" " * self.__x}{"#" * self.__width}')
 
     def __str__(self):
-        return (
-            f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}')
+        """Return the print() and str() representation of the Rectangle."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)
 
     def update(self, *args, **kwargs):
+        '''
+        Update the values of the rectangle
+
+        Args:
+         *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        '''
         # Handling the update with the kwargs
         if 'id' in kwargs:
             self.id = kwargs['id'] or args[0]
@@ -117,5 +136,10 @@ class Rectangle(Base):
             self.__y = args[4]
 
     def to_dictionary(self):
-        return {'x': self.__x, 'y': self.__y, 'id': self.id, 'height': self.__height, 'width': self.__width}
+        '''Return the dictionnary representation of the rectangle'''
+        return {'x': self.__x,
+                'y': self.__y,
+                'id': self.id,
+                'height': self.__height,
+                'width': self.__width}
 
