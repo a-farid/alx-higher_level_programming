@@ -7,6 +7,7 @@ class Rectangle(Base):
     '''The rectangle class'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        '''Initialiser of the Rectangle class '''
         super().__init__(id)
         if not isinstance(width, int):
             raise TypeError('width must be an integer')
@@ -143,4 +144,3 @@ class Rectangle(Base):
                 'id': self.id,
                 'height': self.__height,
                 'width': self.__width}
-

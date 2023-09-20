@@ -7,8 +7,8 @@ from models.base import Base
 
 class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
+        '''Initializer of the class Square '''
         super().__init__(size, size, x, y, id)
-
         self.size = size
 
     def __str__(self):
@@ -41,4 +41,3 @@ class Square(Rectangle):
             self.x = kwargs['x']
         if 'y' in kwargs:
             self.y = kwargs['y']
-
