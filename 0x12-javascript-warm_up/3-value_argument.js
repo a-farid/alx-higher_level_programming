@@ -1,9 +1,9 @@
 #!/usr/bin/node
 const argvLen = process.argv;
 
-if (argvLen.length === 2) {
-  console.log('No argument');
-} else {
+if (argvLen[2]) {
   console.log(argvLen[2]);
+} else {
+  console.log('No argument');
 }
 
