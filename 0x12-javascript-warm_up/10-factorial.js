@@ -1,8 +1,12 @@
 #!/usr/bin/node
-const myVar = process.argv[2];
-let result = 1;
+function factorial (n) {
+  if (n < 0) {
+    return (-1);
+  }
+  if (n === 0 || isNaN(n)) {
+    return (1);
+  }
+  return (n * factorial(n - 1));
+}
 
-for (let i = 1; i <= myVar; i++) result *= i;
-
-console.log(result);
-
+console.log(factorial(Number(process.argv[2])));
