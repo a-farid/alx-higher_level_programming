@@ -6,7 +6,7 @@ const values = Object.values(dict);
 
 const resultObject = {};
 for (let i = 0; i < values.length; i++) {
-  if (!resultObject.hasOwnProperty(values[i])) {
+  if (!Object.prototype.hasOwnProperty.call(resultObject, values[i])) {
     resultObject[values[i]] = [keys[i]];
   } else {
     resultObject[values[i]] = [...resultObject[values[i]], keys[i]];
