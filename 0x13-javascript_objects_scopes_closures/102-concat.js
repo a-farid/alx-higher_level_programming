@@ -7,7 +7,7 @@ const fromFileToFile = (source, dest) => {
     if (err) {
       console.error('Error reading the file:', err);
     } else {
-      fs.appendFile(`./${dest}`, data, (err) => {
+      fs.appendFile(`./${dest}`, data.toString(), (err) => {
         if (err) console.error('Error:', err);
       });
       fs.appendFile(`./${dest}`, '\n', (err) => {
