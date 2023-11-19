@@ -13,5 +13,5 @@ if __name__ == "__main__":
     results = cursor.fetchall()
     for row in results:
         print(row)
-    currsor.close()
+    cursor.close()
     db.close()
