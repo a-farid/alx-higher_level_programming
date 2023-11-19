@@ -21,4 +21,5 @@ if __name__ == "__main__":
         city = City(name='San Francisco')
         state.cities.append(city)
         session.add(state)
+        session(city)
         session.commit()
